@@ -36,7 +36,7 @@ jobs:
         -
             name: prepare the docker-compose run
             run: |
-                    ls -
+                    ls -l
         -
             name: Build and push
             uses: docker/build-push-action@v4
@@ -56,7 +56,7 @@ jobs:
                 target: "/home/ubuntu/backend"
         -
             name: docker compose
-            uses: appleboy/ssh-action@v0.1.10
+            uses: appleboy/ssh-action@v0.1.7
             with:
                 host: ${{ secrets.HOST_SERVER }}
                 username: ${{ secrets.HOST_USER_NAME }}
